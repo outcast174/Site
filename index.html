@@ -57,6 +57,7 @@
         width: 100vw;
         height: 100vh;
         overflow: hidden;
+        display: none;
     }
 
     /* -------------------------// end of entity main //---------------------------- */
@@ -240,10 +241,9 @@
       const entityMain = document.querySelector('.entity_main');
       const landingPage = document.querySelector('.landing-page');
       const audio = document.querySelector('audio');
-      const volumeSlider = document.getElementById('volume-slider');
 
       enterButton.addEventListener('click', () => {
-          entityMain.style.opacity = '1';
+          entityMain.style.display = 'block';
           entityMain.style.pointerEvents = 'auto';
           landingPage.classList.add('hidden');
 
