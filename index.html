@@ -1,534 +1,286 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Dashboard</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>outcast.lol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+</head>
 <style>
+      
+ /*   .--..--..--..--..--..--.
+    .' \  (`._   (_)     _   \
+  .'    |  '._)         (_)  |                  
+  \ _.')\      .----..---.   /
+  |(_.'  |    /    .-\-.  \  |
+  \     0|    |   ( O| O) | o|
+   |  _  |  .--.____.'._.-.  |                       PROPERTY OF OUTCAST.LOL
+   \ (_) | o         -` .-`  |                           MADE BY OUTCAST
+    |    \   |`-._ _ _ _ _\ /
+    \    |   |  `. |_||_|   |
+    | o  |    \_      \     |     -.   .-.
+    |.-.  \     `--..-'   O |     `.`-' .'
+  _.'  .' |     `-.-'      /-.__   ' .-'
+.' `-.` '.|='=.='=.='=.='=|._/_ `-'.'
+`-._  `.  |________/\_____|    `-.'
+   .'   ).| '=' '='\/ '=' |
+   `._.`  '---------------'
+           //___\   //___\
+             ||       ||
+    LGB      ||_.-.   ||_.-.
+            (_.--__) (_.--__) */
 
-    :root {
-        --primary-color: #0C9736;
-        --secondary-color: #151515;
-        --outline-color: #252525;
-        --text-color: #E6E6E6;
-        --random: #111;
+    * {
+      cursor: url(https://cur.cursors-4u.net/anime/ani-9/ani869.cur), auto !important;
     }
+    
+    /* ======================================================================= */
+    /* -------------------------// body //---------------------------------- */
 
     body {
         margin: 0;
         padding: 0;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        height: 100%;
-        background-color: var(--random)
-    }
-    
-    .sidebar {
-        width: 63px;
+        width: 100vw;
         height: 100vh;
-        position: fixed;
-        border-right: 1px solid var(--outline-color);
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-color: #222;
     }
 
-    .content {
-        margin-left: 63px;
-    }
-    
-    .header {
-        height: 63px;
-        color: #fff;
-        border-bottom: 1px solid var(--outline-color);
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-    
-    .welcome {
-        margin-top: 34px;
-        margin-left: 27px;
-        line-height: 4.5px;
-        font-family: Poppins;
-        margin-bottom: 0;
-        width: auto;
-    }
-    
-    .icon {
-        display: inline-block;
-        width: 18px;
-        height: 18px;
-        margin-right: 9px;
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        line-height: 18px;
+    /* -------------------------// end of body //----------------------------- */
+    /* ====================================================================== */
+    /* -------------------------// entity main //--------------------------- */
+
+    .entity_main {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: none;
     }
 
-    .logocontainer {
-        width: 100%;
-        height: 63px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    /* -------------------------// end of entity main //---------------------------- */
+    /* ============================================================================ */
+    /* -------------------------// entity background //--------------------------- */
 
-    .column1 {
-        margin-right: 27px;
-    }
-
-    .navoption {
-        width: 100%;
-        height: 63px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #title {
+    .entity_bg {
+        height: 100vh;
+        width: 100vw;
         margin: 0;
         padding: 0;
-        font-family: Poppins, sans-serif;
-        justify-content: center;
-        display: flex;
+        filter: contrast(70%) saturate(10%) blur(2px);
+        z-index: -1;
     }
 
-    .title-container {
-        flex-grow: 1;
-    }
-
-    .navcontainer {
-        margin-top: 9px;
-        border-bottom: 2px solid var(--outline-color);
+    #bgimg {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* -------------------------// end of entity background //---------------------------- */
+    /* ================================================================================== */
+    /* -------------------------// entity container //---------------------------------- */
+
+    .entity_container {
+        width: 480px;
+        height: 470px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 500px;
+        max-height: 500px;
+        text-align: center;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        background: rgba(88, 88, 88, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .entity_square {
+        width: 80%;
+        max-width: 500px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .entity_container h1 {
+        font-size: 45px;
+        font-family: Poppins, sans-serif;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(90deg, #ff62ea 0%, #ffffff 30%, #ff91fa 60%, #ffffff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient 8s linear infinite, glow 3s ease-in-out infinite alternate;
+    }
+
+    .entity_container p {
+        font-size: 1rem;
+        font-family: Poppins, sans-serif;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 13px;
     }
     
-    .row1 {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin-top: 20px;
-        margin-left: 27px;
-        font-family: Poppins;
-        margin-bottom: 0;
+    /* -------------------------// end of entity container //----------------------------- */
+    /* ================================================================================== */
+    /* -------------------------// entity pfp //---------------------------------------- */
+
+    .entity_pfp {
+        width: 150px;
+        height: 150px;
+        border-radius: 15px;
+        background-image: url("https://media.discordapp.net/attachments/1154865203754848378/1179524028629790821/image.png?ex=657a185a&is=6567a35a&hm=8a37178b0c3395708fcd8d9d966020ebe074498704d6d759e889f7a784014815&=&format=png&quality=lossless");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto;
+        margin-bottom: 8px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
     }
 
-    .overlay {
-        display: none;
+    /* -------------------------// end of entity pfp //----------------------------- */
+    /* ============================================================================ */
+    /* -------------------------// entity links //-------------------------------- */
+
+    .entity_links a {
+        display: inline-block;
+        transition: transform 1s ease-in-out, filter 1s ease-in-out;
+        margin-right: 2px;
+    }
+    
+    .entity_links img {
+        transition: filter 1s ease-in-out;
+    }
+    
+    .entity_links a:hover {
+        transform: scale(1.05);
+    }
+    
+    .entity_links a:hover img {
+        filter: drop-shadow(0 0 5px rgba(206, 56, 181, 0.8));
+    }
+
+    /* -------------------------// end of entity links //----------------------------- */
+    /* ============================================================================== */
+    /* -------------------------// animations //------------------------------------ */
+
+    @keyframes gradient {
+        0%, 100% {
+        background-position: 0% 50%;
+        }
+        50% {
+        background-position: 100% 50%;
+        }
+    }
+
+    @keyframes glow {
+        0%, 100% {
+          text-shadow: 0 0 7px rgba(233, 52, 218, 0.5);
+        }
+        50% {
+          text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+        }
+      }
+
+    /* -------------------------// end of animations //------------------------------- */
+    /* ============================================================================== */
+
+    .landing-page {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #111;
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.726);
-        z-index: 1;
-    }
+        z-index: 69;
+      }
 
-    .column1 {
-        width: 360px;
-    }
-
-    .sidebar-toggler {
+    .landing-page.hidden {
         display: none;
     }
 
-    .close-button {
-        display: none;
-    }
-
-    .input-container {
-        position: relative;
-        text-align: center;
-    }
-
-    .pissingmeoff {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-115%);
-        margin-left: 11.1px;
-        width: fit-content;
-        padding-right: 10px;
-        padding-left: 10px;
-        background-color: var(--random);
-        color: var(--text-color);
-    }
-
-    input {
-        height: 50px;
-        width: 100%;
-        color: var(--text-color);
-        margin-top: 20px;
-    }
-
-    input[type=number]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button { 
-        -webkit-appearance: none;
-        background: url('gangshi.png') no-repeat 50% 50%;  
-        cursor:pointer;
-        opacity: 1;
-        display:block;
-        width: 19px;
-        color: #333;
-        text-align:center;
-        position:relative;
-    }
-
-    option {
-        font-family: Poppins;
-    }
-
-    .cards {
-        flex-direction: row;
-        display: flex;
-        width: auto;
-    }
-
-    .card {
-        border: 1px solid var(--outline-color);
-        border-radius: 8px;
-        width: 330px;
-        color: var(--text-color);
-        padding: 20px;
-        text-align: left;
-        transition: transform 0.3s ease-in-out;
+    .landing-page button {
+        padding: 10px 20px;
+        border: 2px solid #fff;
+        background-color: transparent;
+        color: #fff;
+        font-size: 1.5rem;
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
         cursor: pointer;
-        margin-top: 27px;
-        margin-left: 27px;
-        font-family: Poppins;
+        transition: all 0.3s ease-in-out;
     }
 
-    #dropdown,
-    #secondropdown {
-        cursor: pointer;
+    @media only screen and (max-width: 800px) {
+    .entity_square {
+        width: 90%;
     }
-    
-
-    .card:hover {
-        background-color: var(--secondary-color);
-        transition: 0.6s;
-    }
-
-    input[type="radio"] {
-        display: none;
-    }
-
-    input[type="radio"]:checked + .card {
-        border-color: #1c64f2;
-        background-color: var(--secondary-color);
-    }
-
-    input::placeholder {
-        color: #333;
-    }
-
-    input[type="text"],
-    input[type="number"] {
-        padding-left: 18px;
-    }
-
-    .description span {
-        font-size: 12px;
-        color: #888;
-        text-align: left;
-        display: flex;
-        margin-top: 3px;
-    }
-
-    #pagetitle {
-        color: #E6E6E6; 
-        font-size: 21.6px; 
-        font-weight: bolder; 
-        margin-bottom: 20px;
-    }
-
-    .desc {
-        color: #5E5E5E; font-size: 14px; display: inline-block;
-    }
-
-
-    @media only screen and (max-width: 768px) {
-
-        .sidebar {
-            display: none;
-        }
-
-        .content {
-            margin-left: 0;
-        }
-
-        .close-button {
-            display: none;
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-        }
-
-        .sidebar {
-            width: 25%;
-            background-color: var(--random);
-            z-index: 2;
-            position: fixed;
-            height: 100%;                
-        }
-
-        .sidebar-toggler {
-            display: block;
-            margin-left: 27px;
-            cursor: pointer;
-        }
-
-        .sidebar:not(.wider) {
-            display: none;
-        }
-
-        .sidebar.wider {
-            display: block;
-            animation: sidebar 0.5s ease forwards;
-        }
-
-        .close-button.show {
-            display: flex;
-        }
-
-        .column1 {
-            width: 95%;
-        }
-
-        .desc {
-            font-size: 12.5px;
-        }
-
-        .cards {
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .card {
-            width: 90%;
-            margin: 0 auto 27px;
-        }
-
-        #second {
-            margin-top: 27px;
-        }
-
-        .row1 {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #highlight {
-            font-size: 13px;
-        }
-
-        .input {
-            width: 100%;
-        }
-
-        .input-container {
-            width: 100%;
-        }
-
-        .input-container label {
-            font-size: 0.8rem;
-        }
-
-        @keyframes sidebar {
-                0% {
-                    width: 0;
-                }
-
-                100% {
-                    width: 30%;
-                }
-            }
-
-        }
+}
 </style>
 <script>
-function toggleSidebar() {
-    var sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('wider');
+  document.addEventListener("DOMContentLoaded", () => {
+      const enterButton = document.getElementById('enterbutton');
+      const entityMain = document.querySelector('.entity_main');
+      const landingPage = document.querySelector('.landing-page');
+      const audio = document.querySelector('audio');
 
-    var overlay = document.querySelector('.overlay');
+      enterButton.addEventListener('click', () => {
+          entityMain.style.display = 'block';
+          entityMain.style.pointerEvents = 'auto';
+          landingPage.classList.add('hidden');
 
-    if (sidebar.classList.contains('wider')) {
-        overlay.style.display = 'block';
-    } else {
-        overlay.style.display = 'none';
-    }
-
-    var closeButton = document.querySelector('.close-button');
-    closeButton.classList.toggle('show');
-}
+          
+          if (audio.paused) {
+              audio.play();
+          }
+      });
+  });
 </script>
-
-</head>
-<body>
-<div class="sidebar">
-    <div class="logocontainer">
-        <img src="https://svgshare.com/i/zrd.svg" alt="logo">
+<body oncontextmenu="return false";>
+    <div class="landing-page">
+      <button id="enterbutton">Click to Enter</button>
     </div>
-    <div class="navcontainer">
-        <div class="navoption">
-            <a href="29 strothers road">
-                <img style="width: 36px;" src="https://svgshare.com/i/zte.svg" alt="">
-            </a>
+    <audio loop src="https://cdn.discordapp.com/attachments/1150131234127741161/1179506784839413871/drill.mp3?ex=657a084b&is=6567934b&hm=de0e9ca44ff0e1d05eb4d4f2943483adae8a9f8952a28d2012bcffa11b116134&"></audio>
+    <div class="entity_main">
+        <div class="entity_bg">
+            <img id="bgimg" src="https://shopsonix.com/cdn/shop/collections/Final_shopify_collection_banners_1200_x_200_px_60fc205b-0628-4ece-94be-4bea9bfe1910.png?v=1680536317" alt="" srcset="">
         </div>
-        <div class="navoption">
-            <a href="nosviak5">
-                <img style="width: 28.8px;" src="https://svgshare.com/i/zs2.svg" alt="">
-            </a>
+        <div class="entity_container">
+            <div class="entity_square">
+                <div class="entity_pfp">
+                </div>
+                <div class="entity_text">
+                    <h1>outcast</h1> <!-- NAME -->
+                    <p>bla bla bla</p> <!-- SHORT DESCRIPTION -->
+                </div>
+                <div class="entity_links">
+                      <a href="https://t.me/mundania" target="_blank">
+                        <img src="https://svgshare.com/i/10Cz.svg" alt="Telegram" />
+                      </a>                                     
+                </div>
+            </div>
         </div>
-        <div class="navoption">
-            <a href="niggerland">
-                <img style="width: 31.5px;" src="https://svgshare.com/i/zsA.svg" alt="">
-            </a>
-        </div>
-        <div class="navoption">
-            <a href="https://xvideos.com">
-                <img style="width: 27px;" src="https://svgshare.com/i/zre.svg" alt="">
-            </a>
-        </div>
-        <div class="navoption">
-            <a href="https://pornhub.com">
-                <img style="width: 31.5px;" src="https://svgshare.com/i/ztW.svg" alt="">
-            </a>
+        <div class="volume">
+          <input type="range" id="volume-slider" min="0" max="100" value="50">
         </div>
     </div>
-    <div class="close-button" onclick="toggleSidebar()">
-        <img src="https://svgshare.com/i/101S.svg" alt="Close Sidebar">
-    </div>
-</div>
-<div class="overlay"></div>
-<div class="content">
-    <div class="header">
-        <div class="sidebar-toggler" onclick="toggleSidebar()">
-            <img src="https://svgshare.com/i/zzc.svg" alt="Toggle Sidebar">
-        </div>
-        <div class="title-container">
-            <p id="title">Nosviak5 - Final Edition</p>
-        </div>
-    </div>
-    <div class="welcome">
-    <h2 id="pagetitle">Configuration</h2>
-        <div style="display: flex;">
-            <p class="desc">Here you can find the configuration for &#x200B;</p><p id="highlight" style="font-weight: 500; color: #5E5E5E">Nosviak5</p>
-        </div>
-    </div>
-    <div class="row1">
-        <div class="column1">
-            <div class="columntitle">
-                <h2 style="color: #E6E6E6; font-size: 18px; font-weight: 500; font-family: Poppins;">Command & Control</h2>
-            </div>
-            <div class="input">
-                <div class="input-container">
-                    <label class="pissingmeoff" for="serverip" title="Your Server IP Address">IP Address</label>
-                    <input type="text" id="input" name="serverip" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="127.0.0.1">
-                </div>
-                <div class="description">
-                    <span>(Enter the server's IP address.)</span>
-                </div>
-            </div>
-            <div class="input">
-                <div class="input-container">
-                    <label class="pissingmeoff" for="serverport">Port</label>
-                    <input type="number" id="input" name="serverport" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="9090" min="0" max="6969">
-                </div>
-                <div class="description">
-                    <span>(SSH Port)</span>
-                </div>
-            </div>
-            <div class="input-container">
-                <label class="pissingmeoff" for="dropdown">Dropdown</label>
-                    <select id="dropdown" style="background-color: var(--random); width: 100%; border: 1px solid var(--outline-color); border-radius: 8px; margin-top: 20px; height: 50px; color: #E6E6E6; font-family: Poppins;" name="dropdown">
-                        <option value="option1">1</option>
-                        <option value="option2">2</option>
-                        <option value="option3">3</option>
-                    </select>
-            </div>
-            <div class="input">
-                <div class="input-container">
-                    <label class="pissingmeoff" for="windowtitle" title="Your Server IP Address">Window Title</label>
-                    <input type="text" id="input" name="windowtitle" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="127.0.0.1">
-                </div>
-                <div class="description">
-                    <span>(Botnet Window Title)</span>
-                </div>
-            </div>
-        </div>
-        <div class="column1" id="second">
-            <div class="columntitle">
-                <h2 style="color: #E6E6E6; font-size: 18px; font-weight: 500; font-family: Poppins;">API Manager</h2>
-            </div>
-            <div class="input">
-                <div class="input-container">
-                    <label class="pissingmeoff" for="stringinput" title="Your Server IP Address">IP Address</label>
-                    <input type="text" id="input" name="stringinput" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="127.0.0.1">
-                </div>
-                <div class="description">
-                    <span>(Enter the server's IP address.)</span>
-                </div>
-            </div>
-            <div class="input">
-                <div class="input-container">
-                    <label class="pissingmeoff" for="intinput">Port</label>
-                    <input type="number" id="input" name="intinput" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="9090" min="0" max="6969">
-                </div>
-                <div class="description">
-                    <span>(SSH Port)</span>
-                </div>
-            </div>
-            <div class="input-container">
-                <label class="pissingmeoff" for="seconddropdown">Dropdown</label>
-                    <select id="seconddropdown" style="background-color: var(--random); width: 100%; border: 1px solid var(--outline-color); border-radius: 8px; margin-top: 20px; height: 50px; color: #E6E6E6; font-family: Poppins;" name="seconddropdown">
-                        <option value="option1">1</option>
-                        <option value="option2">2</option>
-                        <option value="option3">3</option>
-                    </select>
-            </div>
-            <div class="input">
-                <div class="input-container">
-                    <label class="pissingmeoff" for="stringinput" title="Your Server IP Address">Window Title</label>
-                    <input type="text" id="input" name="stringinput" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="127.0.0.1">
-                </div>
-                <div class="description">
-                    <span>(Botnet Window Title)</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cards">
-        <label for="option1">
-            <input type="radio" id="option1" name="options">
-            <div class="card">
-              <h1 style="font-weight: bolder;">Card Title</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            </div>
-          </label>
-        
-          <label for="option2">
-            <input type="radio" id="option2" name="options">
-            <div class="card">
-              <h1 style="font-weight: bolder;">Card Title</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            </div>
-          </label>
-        
-          <label for="option">
-            <input type="radio" id="option" name="options">
-            <div class="card" style="margin-bottom: 30px;">
-              <h1 style="font-weight: bolder;">Card Title</h1>
-              <p style="font-size: 0.9rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            </div>
-          </label>
-    </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </body>
 </html>
