@@ -21,6 +21,8 @@
     body {
         margin: 0;
         padding: 0;
+        width: 100%;
+        height: 100%;
         background-color: var(--random)
     }
     
@@ -179,13 +181,12 @@
     .cards {
         flex-direction: row;
         display: flex;
-        width: 60%;
-        height: 20%;
     }
 
     .card {
         border: 1px solid var(--outline-color);
         border-radius: 8px;
+        width: 330px;
         color: var(--text-color);
         padding: 20px;
         text-align: left;
@@ -283,10 +284,12 @@
 
         .cards {
             flex-direction: column;
+            width: 100%;
         }
 
         .card {
             width: 90%;
+            margin: 0 auto 27px;
         }
 
         #second {
@@ -388,9 +391,9 @@ function toggleSidebar() {
         </div>
     </div>
     <div class="welcome">
-    <h2 style="color: #E6E6E6; font-size: 21.6px; font-weight: bolder; margin-bottom: 20px;">Configuration</h2>
+    <h2 id="pagetitle" style="color: #E6E6E6; font-size: 21.6px; font-weight: bolder; margin-bottom: 20px;">Configuration</h2>
         <div style="display: flex;">
-            <p style="color: #5E5E5E; font-size: 14px; display: inline-block;">Here you can find the configuration for &#x200B; <p style="font-weight: 500; color: #5E5E5E">Nosviak5</p></p>
+            <p class="desc" style="color: #5E5E5E; font-size: 14px; display: inline-block;">Here you can find the configuration for &#x200B; <p style="font-weight: 500; color: #5E5E5E">Nosviak5</p></p>
         </div>
     </div>
     <div class="row1">
@@ -494,7 +497,7 @@ function toggleSidebar() {
         
           <label for="option">
             <input type="radio" id="option" name="options">
-            <div class="card">
+            <div class="card" style="margin-bottom: 30px;">
               <h1 style="font-weight: bolder;">Card Title</h1>
               <p style="font-size: 0.9rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
             </div>
