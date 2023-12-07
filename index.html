@@ -23,6 +23,7 @@
         padding: 0;
         width: 100%;
         height: 100%;
+        overflow: hidden;
         background-color: var(--random)
     }
     
@@ -316,6 +317,10 @@
             flex-direction: column;
         }
 
+        #highlight {
+            font-size: 13px;
+        }
+
         .input {
             width: 100%;
         }
@@ -408,7 +413,7 @@ function toggleSidebar() {
     <div class="welcome">
     <h2 id="pagetitle">Configuration</h2>
         <div style="display: flex;">
-            <p class="desc">Here you can find the configuration for &#x200B; <p style="font-weight: 500; color: #5E5E5E">Nosviak5</p></p>
+            <p class="desc">Here you can find the configuration for &#x200B; <p id="highlight" style="font-weight: 500; color: #5E5E5E">Nosviak5</p></p>
         </div>
     </div>
     <div class="row1">
