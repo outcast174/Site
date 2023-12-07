@@ -21,7 +21,8 @@
     body {
         margin: 0;
         padding: 0;
-        width: 100%;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
         height: 100%;
         background-color: var(--random)
     }
@@ -198,9 +199,11 @@
         font-family: Poppins;
     }
 
-    #dropdown {
+    #dropdown,
+    #secondropdown {
         cursor: pointer;
     }
+    
 
     .card:hover {
         background-color: var(--secondary-color);
@@ -368,32 +371,32 @@ function toggleSidebar() {
 <body>
 <div class="sidebar">
     <div class="logocontainer">
-        <img src="https://svgshare.com/i/zrd.svg" alt="" srcset="">
+        <img src="https://svgshare.com/i/zrd.svg" alt="logo">
     </div>
     <div class="navcontainer">
         <div class="navoption">
             <a href="29 strothers road">
-                <img style="width: 36px;" src="https://svgshare.com/i/zte.svg" alt="" srcset="">
+                <img style="width: 36px;" src="https://svgshare.com/i/zte.svg" alt="">
             </a>
         </div>
         <div class="navoption">
             <a href="nosviak5">
-                <img style="width: 28.8px;" src="https://svgshare.com/i/zs2.svg" alt="" srcset="">
+                <img style="width: 28.8px;" src="https://svgshare.com/i/zs2.svg" alt="">
             </a>
         </div>
         <div class="navoption">
             <a href="niggerland">
-                <img style="width: 31.5px;" src="https://svgshare.com/i/zsA.svg" alt="" srcset="">
+                <img style="width: 31.5px;" src="https://svgshare.com/i/zsA.svg" alt="">
             </a>
         </div>
         <div class="navoption">
             <a href="https://xvideos.com">
-                <img style="width: 27px;" src="https://svgshare.com/i/zre.svg" alt="" srcset="">
+                <img style="width: 27px;" src="https://svgshare.com/i/zre.svg" alt="">
             </a>
         </div>
         <div class="navoption">
             <a href="https://pornhub.com">
-                <img style="width: 31.5px;" src="https://svgshare.com/i/ztW.svg" alt="" srcset="">
+                <img style="width: 31.5px;" src="https://svgshare.com/i/ztW.svg" alt="">
             </a>
         </div>
     </div>
@@ -414,7 +417,7 @@ function toggleSidebar() {
     <div class="welcome">
     <h2 id="pagetitle">Configuration</h2>
         <div style="display: flex;">
-            <p class="desc">Here you can find the configuration for &#x200B; <p id="highlight" style="font-weight: 500; color: #5E5E5E">Nosviak5</p></p>
+            <p class="desc">Here you can find the configuration for &#x200B;</p><p id="highlight" style="font-weight: 500; color: #5E5E5E">Nosviak5</p>
         </div>
     </div>
     <div class="row1">
@@ -424,8 +427,8 @@ function toggleSidebar() {
             </div>
             <div class="input">
                 <div class="input-container">
-                    <label class="pissingmeoff" for="stringinput" title="Your Server IP Address">IP Address</label>
-                    <input type="text" id="input" name="stringinput" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="127.0.0.1">
+                    <label class="pissingmeoff" for="serverip" title="Your Server IP Address">IP Address</label>
+                    <input type="text" id="input" name="serverip" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="127.0.0.1">
                 </div>
                 <div class="description">
                     <span>(Enter the server's IP address.)</span>
@@ -433,15 +436,15 @@ function toggleSidebar() {
             </div>
             <div class="input">
                 <div class="input-container">
-                    <label class="pissingmeoff" for="intinput">Port</label>
-                    <input type="number" id="input" name="intinput" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="9090" min="0" max="6969">
+                    <label class="pissingmeoff" for="serverport">Port</label>
+                    <input type="number" id="input" name="serverport" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="9090" min="0" max="6969">
                 </div>
                 <div class="description">
                     <span>(SSH Port)</span>
                 </div>
             </div>
             <div class="input-container">
-                <label class="pissingmeoff" for="stringinput">Dropdown</label>
+                <label class="pissingmeoff" for="dropdown">Dropdown</label>
                     <select id="dropdown" style="background-color: var(--random); width: 100%; border: 1px solid var(--outline-color); border-radius: 8px; margin-top: 20px; height: 50px; color: #E6E6E6; font-family: Poppins;" name="dropdown">
                         <option value="option1">1</option>
                         <option value="option2">2</option>
@@ -450,8 +453,8 @@ function toggleSidebar() {
             </div>
             <div class="input">
                 <div class="input-container">
-                    <label class="pissingmeoff" for="stringinput" title="Your Server IP Address">Window Title</label>
-                    <input type="text" id="input" name="stringinput" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="127.0.0.1">
+                    <label class="pissingmeoff" for="windowtitle" title="Your Server IP Address">Window Title</label>
+                    <input type="text" id="input" name="windowtitle" style="border: 1.5px solid var(--outline-color); border-radius: 8px; background-color: var(--random);" placeholder="127.0.0.1">
                 </div>
                 <div class="description">
                     <span>(Botnet Window Title)</span>
@@ -481,8 +484,8 @@ function toggleSidebar() {
                 </div>
             </div>
             <div class="input-container">
-                <label class="pissingmeoff" for="stringinput">Dropdown</label>
-                    <select id="dropdown" style="background-color: var(--random); width: 100%; border: 1px solid var(--outline-color); border-radius: 8px; margin-top: 20px; height: 50px; color: #E6E6E6; font-family: Poppins;" name="dropdown">
+                <label class="pissingmeoff" for="seconddropdown">Dropdown</label>
+                    <select id="seconddropdown" style="background-color: var(--random); width: 100%; border: 1px solid var(--outline-color); border-radius: 8px; margin-top: 20px; height: 50px; color: #E6E6E6; font-family: Poppins;" name="seconddropdown">
                         <option value="option1">1</option>
                         <option value="option2">2</option>
                         <option value="option3">3</option>
